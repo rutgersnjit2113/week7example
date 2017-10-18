@@ -15,7 +15,8 @@ try {
 }
 $conn = null;
 
-$sql = "SELECT id, email FROM accounts";
+$sql = "SELECT id LIMIT 5, email FROM accounts";
 $result = $conn->query($sql);
+echo "Results: " $result;
 
 ?>
