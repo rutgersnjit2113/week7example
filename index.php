@@ -15,4 +15,7 @@ try {
 }
 $conn = null;
 
+$sql = "SELECT id, email FROM accounts";
+$result = $conn->query($sql);
+
 ?>
