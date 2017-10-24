@@ -24,6 +24,7 @@ if(!result)
     	echo mysql_error();
 	}
 $array = mysql_fetch_assoc($result);
+print_r($array);
 
 /*if ($result->num_rows > 0) 
 	{
