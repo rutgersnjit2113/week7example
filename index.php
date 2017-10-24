@@ -17,9 +17,9 @@ $conn = null;
 
 $query = 'SELECT id, email
           FROM accounts
-	  WHERE id = 5'
-$statement = $db->prepare($query);
-$statement->bindValue(':category_id', $category_id);
+	  WHERE id = :id;'
+$statement = $conn->prepare($query);
+$statement->bindValue(':id', $id);
 $statement->execute();
 $products = $statement->fetchAll();
 $statement->closeCursor();
