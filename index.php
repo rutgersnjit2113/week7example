@@ -15,20 +15,20 @@ try {
 }
 $conn = null;
 
-$sql = "SELECT id, email FROM MyGuests";
+$sql = "SELECT id, email FROM accounts";
 $result = $conn->query($sql);
 
-if ($result->num_rows < 6) 
+if ($result->num_rows > 0) 
 	{
-    // output data of each row
+	echo "<table><tr><th>ID</th><th>Email</th></tr>";
 	while($row = $result->fetch_assoc()) 
-		{
-	        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " .
-		$row["lastname"]. "<br>";
-		}
+	{
+	echo "<tr><td>".$row["id"]."</td><td>".$row["email"]."</td></tr>";
+	echo "</table>";
 	} 
 	else 
 	{
-	echo "0 results;"
+	echo "0 results";
 	}
+	$conn->close();
 ?>
