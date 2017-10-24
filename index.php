@@ -15,14 +15,20 @@ try {
 }
 $conn = null;
 
-$query = 'SELECT id, email
-          FROM accounts
-	  WHERE id = :id;'
-$statement = $conn->prepare($query);
-$statement->bindValue(':id', $id);
-$statement->execute();
-$products = $statement->fetchAll();
-$statement->closeCursor();
+$sql = "SELECT id, email FROM MyGuests";
+$result = $conn->query($sql);
 
-
+if ($result->num_rows < 6) 
+	{
+    // output data of each row
+	while($row = $result->fetch_assoc()) 
+		{
+	        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " .
+		$row["lastname"]. "<br>";
+		}
+	} 
+	else 
+	{
+	echo "0 results;"
+	}
 ?>
