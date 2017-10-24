@@ -15,7 +15,8 @@ try {
 }
 $conn = null;
 
-$sql = "SELECT id, email FROM accounts";
+/*$sql = "SELECT id, email 
+	FROM accounts";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) 
@@ -30,5 +31,5 @@ if ($result->num_rows > 0)
 	{
 	echo "0 results";
 	}
-	$conn->close();
+	$conn->close();*/
 ?>
