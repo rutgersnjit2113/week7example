@@ -15,9 +15,17 @@ try {
 }
 $conn = null;
 
-$sql = "SELECT id, email 
-	FROM accounts";
+$sql = 'SELECT id, email
+    	FROM accounts
+        ORDER BY id
+	LIMIT 5';
 $result = $conn->query($sql);
+	while ($row = mysql_fetch_assoc($result)) 
+	{ 
+    	$name = $row['name'];
+        echo $name;
+	}
+	mysql_free_result($result);
 
 /*if ($result->num_rows > 0) 
 	{
