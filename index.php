@@ -15,11 +15,11 @@ try {
 }
 $conn = null;
 
-/*$sql = "SELECT id, email 
+$sql = "SELECT id, email 
 	FROM accounts";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) 
+/*if ($result->num_rows > 0) 
 	{
 	echo "<table><tr><th>ID</th><th>Email</th></tr>";
 	while($row = $result->fetch_assoc()) 
