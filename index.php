@@ -18,20 +18,12 @@ $conn = null;
 $sql = "SELECT id
     	FROM accounts
 	LIMIT 5";
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_num_rows($result) > 0) 
+$result = mysql_query($sql, $conn);
+if(!result)
 	{
-        while($row = mysqli_fetch_assoc($result)) 
-		{
-		echo "ID: " . $row["id"]. " - Email: " . $row["email"]. "<br>";
-		}
-	} 
-else 
-	{
-	echo "0 results";
+    	echo mysql_error();
 	}
-	mysqli_close($conn);
+$array = mysql_fetch_assoc($result);
 
 /*if ($result->num_rows > 0) 
 	{
