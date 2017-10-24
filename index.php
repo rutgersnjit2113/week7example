@@ -20,14 +20,6 @@ $sql = 'SELECT id, email
         ORDER BY id
 	LIMIT 5';
 $result = mysql_query($sql);
-	while ($row = mysql_fetch_assoc($result)) 
-	{
-	$id = $row['id'];
-	echo $id;
-	}
-	mysql_free_result($result);
-	}
-	var_dump($row);
 
 /*if ($result->num_rows > 0) 
 	{
