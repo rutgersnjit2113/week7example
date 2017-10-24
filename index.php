@@ -15,8 +15,14 @@ try {
 }
 $conn = null;
 
-//$sql = "SELECT id LIMIT 5, email FROM accounts";
-//$result = $conn->query($sql);
-//echo "Results: " $result;
+$query = 'SELECT id, email
+          FROM accounts
+	  WHERE id = 5'
+$statement = $db->prepare($query);
+$statement->bindValue(':category_id', $category_id);
+$statement->execute();
+$products = $statement->fetchAll();
+$statement->closeCursor();
+
 
 ?>
