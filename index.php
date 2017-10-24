@@ -22,11 +22,11 @@ $sql = 'SELECT id, email
 $result = mysql_query($sql);
 	if ($result->num_rows > 0) 
 	{
-	echo "<table><tr><th>ID</th><th>Name</th></tr>";
+	echo "<table><tr><th>ID</th><th>Email</th></tr>";
         // output data of each row
 	while($row = $result->fetch_assoc()) 
 	{
-	echo "<tr><td>".$row['id']."</td><td>".$row['firstname']."</td></tr>";
+	echo "<tr><td>".$row['id']."</td><td>".$row['email']."</td></tr>";
 	}
 	echo "</table>";
 	} 
